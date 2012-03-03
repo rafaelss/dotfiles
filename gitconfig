@@ -1,0 +1,28 @@
+[user]
+	name = Rafael Souza
+	email = me@rafaelss.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+[alias]
+	sh = !git-sh
+	ci = commit
+	co = checkout
+	b = branch
+	st = status
+	who = shortlog -s --
+	fl = log -p
+	lg = log --oneline --decorate
+	sb = status -sb
+	dw = diff --word-diff
+[core]
+	editor = subl -w
+	excludesfile = ~/.gitignore
+[help]
+	autocorrect = 1
+[branch]
+	autosetuprebase = always
+[push]
+	default = current
