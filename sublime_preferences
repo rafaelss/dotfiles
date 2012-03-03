@@ -1,0 +1,13 @@
+{
+  "font_face": "Droid Sans Mono",
+  "font_size": 13,
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "highlight_line": true,
+  "draw_white_space": "all",
+  "trim_trailing_white_space_on_save": true,
+  "ensure_newline_at_eof_on_save": true,
+  "auto_complete": false,
+  "shift_tab_unindent": true,
+  "remember_open_files": false
+}
