@@ -1,6 +1,7 @@
 alias ls="ls -hGB"
 alias ll="ls -l"
 alias la="ll -a"
+alias be="bundle exec"
 
 PS1='\n\[\e[0;32m\]$(parse_git_branch)\[\e[m\]\[\e[0;33m\]\w\[\e[m\]\n$ '
 
