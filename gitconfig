@@ -13,6 +13,7 @@
 	b = branch
 	st = status
 	who = shortlog -s --
+	l = log --pretty=format:'%Cred%h %Cblue%ar %Creset%an %Cgreen%s'
 	fl = log -p
 	lg = log --oneline --decorate
 	sb = status -sb
