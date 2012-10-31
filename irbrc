@@ -6,3 +6,10 @@ ARGV.concat ["--readline", "--prompt-mode", "simple"]
 
 IRB.conf[:SAVE_HISTORY] = 500
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
+
+if defined?(ActiveRecord::Base)
+  require "logger"
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
+  ActiveRecord::Base.clear_active_connections!
+end
+
