@@ -11,7 +11,6 @@ INPUTRC=$HOME/.inputrc
 
 PS1='\n\[\e[0;32m\]$(parse_git_branch)\[\e[m\]\[\e[0;33m\]\w\[\e[m\]\n$ '
 
-eval "$(rbenv init -)"
 
 function reload() {
   source ~/.bash_profile
