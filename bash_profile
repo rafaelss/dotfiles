@@ -6,12 +6,13 @@ export HOMEBREW_EDITOR="subl -n"
 export BUNDLER_EDITOR="subl"
 export GEM_EDITOR="subl"
 
-shopt -s nocaseglob
+export HISTCONTROL=ignoredups:erasedups
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+export INPUTRC=$HOME/.inputrc
+
+
 shopt -s histappend
-
-HISTCONTROL=ignoredups:ignorespace
-INPUTRC=$HOME/.inputrc
-
 
 PS1='\n\[\e[0;32m\]$(parse_git_branch)\[\e[m\]\[\e[0;33m\]\w\[\e[m\]\n$ '
 
