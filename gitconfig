@@ -19,7 +19,7 @@
 	sb = status -sb
 	dw = diff --word-diff
 [core]
-	editor = subl -w
+	editor = subl -w -n
 	excludesfile = ~/.gitignore
 [help]
 	autocorrect = 1
