@@ -27,3 +27,8 @@
 	autosetuprebase = always
 [push]
 	default = current
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
+	trustExitCode = true
