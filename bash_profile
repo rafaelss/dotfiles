@@ -22,3 +22,8 @@ function parse_git_branch() {
     echo -ne "[$branch] ";
   fi
 }
+
+function rails_new() {
+  rails new $1 -m http://datamapper.org/templates/rails.rb --skip-bundle -O -S -d postgresql -T
+}
+
