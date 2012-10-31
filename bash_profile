@@ -2,6 +2,9 @@ alias ls="ls -hGB"
 alias ll="ls -l"
 alias la="ll -a"
 alias be="bundle exec"
+export HOMEBREW_EDITOR="subl -n"
+export BUNDLER_EDITOR="subl"
+export GEM_EDITOR="subl"
 
 shopt -s nocaseglob
 shopt -s histappend
