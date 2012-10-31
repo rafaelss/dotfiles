@@ -1,14 +1,21 @@
 {
+  "auto_complete": false,
+  "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+  "detect_indentation": true,
+  "draw_white_space": "all",
+  "ensure_newline_at_eof_on_save": true,
   "font_face": "Droid Sans Mono",
   "font_size": 13,
-  "tab_size": 2,
-  "translate_tabs_to_spaces": true,
   "highlight_line": true,
-  "draw_white_space": "all",
-  "trim_trailing_white_space_on_save": true,
-  "ensure_newline_at_eof_on_save": true,
-  "auto_complete": false,
-  "shift_tab_unindent": true,
+  "ignored_packages":
+  [
+  	"Vintage"
+  ],
   "remember_open_files": false,
+  "shift_tab_unindent": true,
+  "tab_size": 2,
+  "theme": "Soda Dark.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
   "word_wrap": false
 }
