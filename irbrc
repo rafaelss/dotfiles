@@ -13,3 +13,6 @@ if defined?(ActiveRecord::Base)
   ActiveRecord::Base.clear_active_connections!
 end
 
+def switch_schema(name)
+  Apartment::Database.switch(name.to_s)
+end if defined?(Apartment::Database)
