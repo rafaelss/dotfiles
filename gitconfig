@@ -1,23 +1,38 @@
 [user]
 	name = Rafael Souza
-	email = me@rafaelss.com
+	email = rafael.ssouza@gmail.com
 [color]
 	diff = auto
 	status = auto
 	branch = auto
-	ui = true
+	ui = always
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[color "diff"]
+  commit = green
+  meta = yellow
+  frag = cyan
+  old = red
+  new = green
+  whitespace = red reverse
 [alias]
 	sh = !git-sh
 	ci = commit
 	co = checkout
 	b = branch
-	st = status
-	who = shortlog -s --
-	l = log --pretty=format:'%Cred%h %Cblue%ar %Creset%an %Cgreen%s'
+	st = status -u --column
+	who = shortlog -s -n --
+	l = log --pretty=format:'%Cred%h %Cblue%ar %Creset%an %Cgreen%s %Creset%D'
 	fl = log -p
-	lg = log --oneline --decorate
+	#lg = log --oneline --decorate
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	sb = status -sb
 	dw = diff --word-diff
+	latest = for-each-ref --sort=-committerdate refs/heads --format='%(committerdate:short) %(refname:short)'
+	bdiff = "!f() { git log master..$1 --oneline; }; f"
 [core]
 	editor = subl -w -n
 	excludesfile = ~/.gitignore
@@ -27,8 +42,16 @@
 	autosetuprebase = always
 [push]
 	default = current
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
 [merge]
-	tool = diffmerge
+	tool = p4merge
 [mergetool "diffmerge"]
-	cmd = diffmerge --merge\n--result=$MERGED $LOCAL $BASE $REMOTE
+	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = true
+[mergetool "p4merge"]
+  cmd = /Applications/p4merge.app/Contents/MacOS/p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false

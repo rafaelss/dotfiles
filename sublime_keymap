@@ -1,3 +1,10 @@
 [
-  { "keys": ["super+shift+r"], "command": "reveal_in_side_bar" }
+  { "keys": ["super+shift+r"], "command": "reveal_in_side_bar" },
+  { "keys": ["super+v"], "command": "paste_and_indent" },
+  { "keys": ["super+shift+v"], "command": "paste" },
+  { "keys": ["ctrl+shift+."], "command": "erb", "context":
+    [
+      { "key": "selector", "operator": "equal", "operand": "text.html.ruby, source.yaml, source.css, source.scss, source.js" }
+    ]
+  }
 ]
