@@ -1,28 +1,25 @@
 [user]
-	name = Rafael Souza
+	name = rafaelss
 	email = rafael.ssouza@gmail.com
 [color]
-	diff = auto
+	#diff = auto
 	status = auto
 	branch = auto
-	ui = always
-[color "diff-highlight"]
-  oldNormal = red bold
-  oldHighlight = red bold 52
-  newNormal = green bold
-  newHighlight = green bold 22
+	ui = true
 [color "diff"]
-  commit = green
-  meta = yellow
-  frag = cyan
-  old = red
-  new = green
-  whitespace = red reverse
+	commit = green
+	meta = yellow
+	frag = cyan
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 [alias]
 	sh = !git-sh
 	ci = commit
+	cia = commit --amend --no-edit
 	co = checkout
 	b = branch
+	rb = branch --sort=-committerdate
 	st = status -u --column
 	who = shortlog -s -n --
 	l = log --pretty=format:'%Cred%h %Cblue%ar %Creset%an %Cgreen%s %Creset%D'
@@ -32,10 +29,26 @@
 	sb = status -sb
 	dw = diff --word-diff
 	latest = for-each-ref --sort=-committerdate refs/heads --format='%(committerdate:short) %(refname:short)'
-	bdiff = "!f() { git log master..$1 --oneline; }; f"
+	bdiff = "!f() { git log $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')..$1 --oneline; }; f"
+	cleanb = !git branch --merged $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') | grep -v \"\\* $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')\" | xargs -n 1 git branch -d
+	upush = push -u
+	fpush = push --force-with-lease
+	stashgrep = "!f() { for i in `git stash list --format=\"%gd\"` ; do git stash show -p $i | grep -H --label=\"$i\" \"$@\" ; done ; }; f"
+	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
+	lf = !git log --pretty=format:'%C("#E5E81C")%h %C("#eeeeee")%s%C("#FA4DE7")%d - %C("#00A0D9")%cn, %C("#04D941")%cr'
+	gromit = !git add --all && git commit --allow-empty-message --no-edit
 [core]
-	editor = subl -w -n
+	#editor = subl -w -n
+	# editor = code -w -n
+	#editor = micro
+	#editor = kak
+	#editor = hx
+	editor = zed -w -n
 	excludesfile = ~/.gitignore
+	# pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
+
+	# editor = cursor --wait --new-window
 [help]
 	autocorrect = 1
 [branch]
@@ -46,12 +59,60 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [merge]
-	tool = p4merge
+	# tool = diffmerge
+	# tool = araxis
+	# tool = p4merge
+	# tool = vscode
+
+	tool = smerge
+	# conflictstyle = diff3
+	conflictstyle = zdiff3
+
+	# tool = cursor
 [mergetool "diffmerge"]
 	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = true
+[mergetool]
+	keepBackup = false
+[mergetool "araxis"]
+	path = /Applications/Araxis Merge.app/Contents/Utilities/compare
 [mergetool "p4merge"]
-  cmd = /Applications/p4merge.app/Contents/MacOS/p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-  keepTemporaries = false
-  trustExitCode = false
-  keepBackup = false
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+	keepTemporaries = false
+	trustExitCode = false
+	keepBackup = false
+[mergetool "cursor"]
+	cmd = cursor --wait $MERGED
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[http "https://git.e5o5.flynnhub.com"]
+	sslCAInfo = /Users/rafael/.flynn/ca-certs/flynn-1486318333.pem
+[credential "https://git.e5o5.flynnhub.com"]
+	helper = /usr/local/bin/flynn git-credentials
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[diff]
+	noprefix = true
+	colorMoved = default
+[mergetool "smerge"]
+	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
+[init]
+	defaultBranch = main
+[interactive]
+	# diffFilter = diff-so-fancy --patch
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+[url "ssh://git@gitlab.olist.io/"]
+	insteadOf = https://gitlab.olist.io
+[pull]
+	rebase = true
