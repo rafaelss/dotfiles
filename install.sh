@@ -1,10 +1,14 @@
 #!/bin/bash
 
-ln -si $PWD/bash_profile ~/.bash_profile
-ln -si $PWD/gitconfig ~/.gitconfig
-ln -si $PWD/gemrc ~/.gemrc
-ln -si $PWD/irbrc ~/.irbrc
-ln -si $PWD/inputrc ~/.inputrc
-ln -si $PWD/sublime_preferences ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
-ln -si $PWD/sublime_keymap ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Default\ \(OSX\).sublime-keymap
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+if [ ! -d /opt/homebrew ]; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
 ln -nfs $PWD/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+ln -nfs $PWD/gitconfig $HOME/.gitconfig
+ln -nfs $PWD/gemrc $HOME/.gemrc
+ln -nfs $PWD/irbrc $HOME/.irbrc
