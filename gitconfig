@@ -2,7 +2,6 @@
 	name = rafaelss
 	email = rafael.ssouza@gmail.com
 [color]
-	#diff = auto
 	status = auto
 	branch = auto
 	ui = true
@@ -24,7 +23,6 @@
 	who = shortlog -s -n --
 	l = log --pretty=format:'%Cred%h %Cblue%ar %Creset%an %Cgreen%s %Creset%D'
 	fl = log -p
-	#lg = log --oneline --decorate
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	sb = status -sb
 	dw = diff --word-diff
@@ -38,17 +36,9 @@
 	lf = !git log --pretty=format:'%C("#E5E81C")%h %C("#eeeeee")%s%C("#FA4DE7")%d - %C("#00A0D9")%cn, %C("#04D941")%cr'
 	gromit = !git add --all && git commit --allow-empty-message --no-edit
 [core]
-	#editor = subl -w -n
-	# editor = code -w -n
-	#editor = micro
-	#editor = kak
-	#editor = hx
-	editor = zed -w -n
+	editor = code -w -n
 	excludesfile = ~/.gitignore
-	# pager = diff-so-fancy | less --tabs=4 -RFX
 	pager = delta
-
-	# editor = cursor --wait --new-window
 [help]
 	autocorrect = 1
 [branch]
@@ -59,32 +49,13 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [merge]
-	# tool = diffmerge
-	# tool = araxis
-	# tool = p4merge
-	# tool = vscode
-
 	tool = smerge
-	# conflictstyle = diff3
 	conflictstyle = zdiff3
-
-	# tool = cursor
 [mergetool "diffmerge"]
 	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
 	trustExitCode = true
 [mergetool]
 	keepBackup = false
-[mergetool "araxis"]
-	path = /Applications/Araxis Merge.app/Contents/Utilities/compare
-[mergetool "p4merge"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
-	keepTemporaries = false
-	trustExitCode = false
-	keepBackup = false
-[mergetool "cursor"]
-	cmd = cursor --wait $MERGED
-[mergetool "vscode"]
-	cmd = code --wait $MERGED
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -92,8 +63,6 @@
 	process = git-lfs filter-process
 [http "https://git.e5o5.flynnhub.com"]
 	sslCAInfo = /Users/rafael/.flynn/ca-certs/flynn-1486318333.pem
-[credential "https://git.e5o5.flynnhub.com"]
-	helper = /usr/local/bin/flynn git-credentials
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
@@ -108,7 +77,6 @@
 [init]
 	defaultBranch = main
 [interactive]
-	# diffFilter = diff-so-fancy --patch
 	diffFilter = delta --color-only
 [delta]
 	navigate = true
