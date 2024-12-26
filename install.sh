@@ -7,3 +7,4 @@ ln -si $PWD/irbrc ~/.irbrc
 ln -si $PWD/inputrc ~/.inputrc
 ln -si $PWD/sublime_preferences ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Preferences.sublime-settings
 ln -si $PWD/sublime_keymap ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User/Default\ \(OSX\).sublime-keymap
+ln -nfs $PWD/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
