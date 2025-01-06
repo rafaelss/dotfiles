@@ -7,6 +7,7 @@ brew "ripgrep"
 brew "nmap"
 brew "libyaml"
 brew "gpg"
+brew "postgresql"
 
 cask "1password"
 cask "font-hack-nerd-font"
