@@ -6,6 +6,7 @@ brew "git-delta"
 brew "ripgrep"
 brew "nmap"
 brew "libyaml"
+brew "gpg"
 
 cask "1password"
 cask "font-hack-nerd-font"
