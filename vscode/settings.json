@@ -2,5 +2,7 @@
     "editor.fontFamily": "Hack Nerd Font Mono",
     "editor.fontSize": 14,
     "workbench.sideBar.location": "right",
-    "editor.renderWhitespace": "all"
+    "editor.renderWhitespace": "all",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
 }
