@@ -4,5 +4,6 @@
     "workbench.sideBar.location": "right",
     "editor.renderWhitespace": "all",
     "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "workbench.startupEditor": "none"
 }
