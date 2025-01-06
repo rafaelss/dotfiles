@@ -5,6 +5,7 @@ brew "openfortivpn"
 brew "git-delta"
 brew "ripgrep"
 brew "nmap"
+brew "libyaml"
 
 cask "1password"
 cask "font-hack-nerd-font"
