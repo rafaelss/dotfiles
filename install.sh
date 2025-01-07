@@ -18,3 +18,5 @@ ln -nfs $PWD/vscode/settings.json $HOME/Library/Application\ Support/Code/User/s
 ln -nfs $PWD/gitconfig $HOME/.gitconfig
 ln -nfs $PWD/gemrc $HOME/.gemrc
 ln -nfs $PWD/irbrc $HOME/.irbrc
+
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
