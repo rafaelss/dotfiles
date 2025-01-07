@@ -8,6 +8,7 @@ brew "nmap"
 brew "libyaml"
 brew "gpg"
 brew "postgresql"
+brew "httpie"
 
 cask "1password"
 cask "font-hack-nerd-font"
