@@ -10,6 +10,7 @@ brew "gpg"
 brew "postgresql"
 brew "httpie"
 brew "overmind"
+brew "awscli"
 
 cask "1password"
 cask "font-hack-nerd-font"
