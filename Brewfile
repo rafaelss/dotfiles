@@ -9,6 +9,7 @@ brew "libyaml"
 brew "gpg"
 brew "postgresql"
 brew "httpie"
+brew "overmind"
 
 cask "1password"
 cask "font-hack-nerd-font"
