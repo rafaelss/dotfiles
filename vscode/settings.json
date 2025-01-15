@@ -6,5 +6,8 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "workbench.startupEditor": "none",
-    "workbench.colorTheme": "Spinel"
+    "workbench.colorTheme": "Spinel",
+    "files.associations": {
+        "*.jb": "ruby"
+    }
 }
