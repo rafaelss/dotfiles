@@ -20,3 +20,4 @@ ln -nfs $PWD/gemrc $HOME/.gemrc
 ln -nfs $PWD/irbrc $HOME/.irbrc
 
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
+defaults write -g ApplePressAndHoldEnabled -bool false
