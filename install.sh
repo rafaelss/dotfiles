@@ -18,6 +18,7 @@ ln -nfs $PWD/vscode/settings.json $HOME/Library/Application\ Support/Code/User/s
 ln -nfs $PWD/gitconfig $HOME/.gitconfig
 ln -nfs $PWD/gemrc $HOME/.gemrc
 ln -nfs $PWD/irbrc $HOME/.irbrc
+ln -nfs $PWD/rspec $HOME/.rspec
 
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
 defaults write -g ApplePressAndHoldEnabled -bool false
