@@ -49,13 +49,15 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [merge]
-	tool = smerge
-	conflictstyle = zdiff3
-[mergetool "diffmerge"]
-	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-	trustExitCode = true
-[mergetool]
-	keepBackup = false
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait --merge $MERGED
+[diff]
+	noprefix = true
+	colorMoved = default
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -68,12 +70,6 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
-[diff]
-	noprefix = true
-	colorMoved = default
-[mergetool "smerge"]
-	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
-	trustExitCode = true
 [init]
 	defaultBranch = main
 [interactive]
