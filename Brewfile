@@ -11,6 +11,7 @@ brew "postgresql"
 brew "httpie"
 brew "overmind"
 brew "awscli"
+brew "pwgen"
 
 cask "1password"
 cask "font-hack-nerd-font"
