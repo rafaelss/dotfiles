@@ -14,7 +14,7 @@ brew "awscli"
 
 cask "1password"
 cask "font-hack-nerd-font"
-cask "ghostty"
+cask "iterm2"
 cask "raycast"
 cask "slack"
 cask "visual-studio-code"
