@@ -9,5 +9,6 @@
     "workbench.colorTheme": "Spinel",
     "files.associations": {
         "*.jb": "ruby"
-    }
+    },
+    "files.trimFinalNewlines": true
 }
