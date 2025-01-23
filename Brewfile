@@ -18,7 +18,7 @@ cask "font-hack-nerd-font"
 cask "iterm2"
 cask "raycast"
 cask "slack"
-cask "visual-studio-code"
+cask "cursor"
 
 mas "1Password for Safari", id: 1569813296
 mas "Firefox: Private, Safe Browser", id: 989804926

@@ -1,0 +1,24 @@
+{
+    "editor.fontFamily": "Hack Nerd Font Mono",
+    "editor.fontSize": 14,
+    "editor.renderWhitespace": "all",
+    "editor.tabSize": 2,
+    "files.associations": {
+        "*.jb": "ruby"
+    },
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "window.commandCenter": 1,
+    "workbench.colorTheme": "Monokai Pro (Filter Machine)",
+    "workbench.iconTheme": "Monokai Pro (Filter Machine) Icons",
+    "workbench.sideBar.location": "right",
+    "[ruby]": {
+        "editor.defaultFormatter": "Shopify.ruby-lsp", // Use the Ruby LSP as the default formatter
+        "editor.formatOnSave": true, // Format files automatically when saving
+        "editor.formatOnType": true, // Enable formatting while typing
+        "editor.insertSpaces": true, // Use spaces and not tabs for indentation
+        "editor.semanticHighlighting.enabled": true, // Enable semantic highlighting
+        "editor.tabSize": 2 // Use 2 spaces for indentation
+    }
+}

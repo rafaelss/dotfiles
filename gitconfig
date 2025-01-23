@@ -36,7 +36,7 @@
 	lf = !git log --pretty=format:'%C("#E5E81C")%h %C("#eeeeee")%s%C("#FA4DE7")%d - %C("#00A0D9")%cn, %C("#04D941")%cr'
 	gromit = !git add --all && git commit --allow-empty-message --no-edit
 [core]
-	editor = code -w -n
+	editor = cursor -w -n
 	excludesfile = ~/.gitignore
 	pager = delta
 [help]
@@ -49,15 +49,15 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [merge]
-	tool = vscode
-[mergetool "vscode"]
-	cmd = code --wait --merge $MERGED
+	tool = cursor
+[mergetool "cursor"]
+	cmd = cursor --wait --merge $MERGED
 [diff]
 	noprefix = true
 	colorMoved = default
-	tool = vscode
-[difftool "vscode"]
-	cmd = code --wait --diff $LOCAL $REMOTE
+	tool = cursor
+[difftool "cursor"]
+	cmd = cursor --wait --diff $LOCAL $REMOTE
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
