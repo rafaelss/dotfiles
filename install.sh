@@ -12,7 +12,7 @@ fi
 
 brew bundle --file=$PWD/Brewfile
 
-zsh -c 'source $HOME/.zshrc; ln -nfs $PWD/zsh/mise.zsh $ZSH_CUSTOM/mise.zsh'
+zsh -c 'source $HOME/.zshrc; ln -nfs $PWD/zsh/mise.zsh $ZSH_CUSTOM/mise.zsh; ln -nfs $PWD/zsh/aliases.zsh $ZSH_CUSTOM/aliases.zsh'
 
 ln -nfs $PWD/cursor/settings.json $HOME/Library/Application\ Support/Cursor/User/settings.json
 ln -nfs $PWD/gitconfig $HOME/.gitconfig
